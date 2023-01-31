@@ -1,8 +1,8 @@
 # 使い方
 ### urf --new プロジェクト名
 新しいcargoプロジェクトを作成し、uefi-rsをセットアップします。
-具体的には下記のことが行われます。
-1, cargo new プロジェクト名 を実行します。
+具体的には下記のことが行われます。<br>
+1, cargo new プロジェクト名 を実行します。<br>
 2, Cargo.tomlを下記の内容に書き換えます。
 ```
 [package]
@@ -45,8 +45,8 @@ targets = ["x86_64-unknown-uefi"]
 プロジェクトをビルドし、qemu上で実行します。
 なおこのコマンドはプロジェクトルートで行ってください。
 また初めてのビルド&実行時以外に使用しないでください。
-具体的には下記のことが行われます。
-1, cargo build --target x86_64-unknown-uefi を実行します。
+具体的には下記のことが行われます。<br>
+1, cargo build --target x86_64-unknown-uefi を実行します。<br>
 2, 下記を実行します。
 ```
 cp /usr/share/OVMF/OVMF_CODE.fd .
@@ -65,13 +65,13 @@ qemu-system-x86_64 -enable-kvm \
     -drive format=raw,file=fat:rw:esp
 ```
 
-# urf --rrun
+### urf --rrun
 プロジェクトを再ビルドし、qemu上で実行します。
 なおこのコマンドはプロジェクトルートで行ってください。
 また再ビルド時にのみ使用してください。
-具体的には下記のことが行われます。
-1, cargo build --target x86_64-unknown-uefi を実行します。
-2, cp ./target/x86_64-unknown-uefi/debug/プロジェクト名.efi  ./esp/efi/boot/bootx64.efi
+具体的には下記のことが行われます。<br>
+1, cargo build --target x86_64-unknown-uefi を実行します。<br>
+2, cp ./target/x86_64-unknown-uefi/debug/プロジェクト名.efi  ./esp/efi/boot/bootx64.efi を実行します。<br>
 3, 下記を実行します。
 ```
 qemu-system-x86_64 -enable-kvm \
